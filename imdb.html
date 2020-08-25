@@ -1,0 +1,550 @@
+<html>
+ <head>
+  <title></title>
+  <meta name="format-detection" content="telephoneno" />
+  <meta name="viewport" content="widthdevice-width" />
+  <!-- Use the latest (edge) version of IE rendering engine -->
+  <meta http-equiv="X-UA-Compatible" content="IEedge" />
+  <style>
+            /* resets */
+
+            body {
+                -webkit-text-size-adjust:none;
+                -ms-text-size-adjust:none;
+                height:100% !important;
+                margin: 0px; padding: 0px;
+                width:100% !important;
+                background-color: #f4f4f4;
+                color: #000000;
+            }
+
+            body, table, td, p, h1, h2, h3 {
+                -ms-text-size-adjust:100%;
+                -webkit-text-size-adjust:100%;
+                box-sizing: border-box;
+            }
+
+            body, td  {
+                font-family: 'Helvetica', 'Arial', 'sans-serif';
+            }
+
+            table {
+                border-spacing:0;
+            }
+
+            table, td {
+                border-collapse:collapse;
+                mso-table-lspace:0pt;
+                mso-table-rspace:0pt;
+            }
+
+            img, a img {
+                border:0;
+                outline:none;
+                text-decoration:none;
+                -ms-interpolation-mode:bicubic;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+
+            /* fonts and font-like stuff */
+
+            .font-normal {
+                font-family: 'Helvetica', 'Arial', 'sans-serif';
+                font-size:1em;
+            }
+            .font-bold {
+                font-weight: bold;
+            }
+
+            h1 { font-size: 24px; }
+            h2 { font-size: 22px; }
+            h3 { font-size: 20px; }
+
+            h1, h2, h3 {
+                margin: 0px;
+                font-weight: normal;
+            }
+
+            .align-left {
+                text-align: left;
+            }
+            .align-center {
+                text-align: center;
+            }
+            .align-right {
+                text-align: right;
+            }
+
+            .nowrap {
+                white-space: nowrap;
+            }
+
+            .display-none {
+                font-size:1px;
+                color:#f4f4f4;
+                line-height:1px;
+                max-height:0px;
+                max-width:0px;
+                opacity:0;
+                overflow:hidden;
+            }
+
+            /* container table */
+
+            #container {
+                width:620px;
+                height:100%;
+                padding:10px 10px 10px 10px;
+            }
+
+            #container-cell {
+                width: 600px;
+                min-width: 600px;
+            }
+
+            .top-wrapper {
+                background: #f4f4f4;
+                padding: 20px 0px 0px 0px;
+            }
+
+            #content-wrapper {
+                background-color: #ffffff;
+                padding: 0 0 10px 0;
+            }
+
+            /* header styles */
+            #header-container {
+                width: 600px;
+                min-width: 600px;
+            }
+
+            #header-logo-cell {
+                background-color: #E6B91E;
+                height:64px;
+                min-width: 100px;
+                text-align: center;
+                vertical-align: middle;
+                width:100px;
+            }
+
+            #header-spacer-cell {
+                height: 64px;
+                min-width: 8px;
+                width: 8px;
+            }
+
+            .header-right-cell {
+                height:64px;
+                padding: 0 10px 0 20px !important;
+                width: 90%;
+                color: #ffffff;
+                background-color: #181818;
+            }
+
+            .header-links-cell {
+                min-width: 150px;
+                width: 150px;
+                background-color: #181818;
+                padding: 0 30px 0 0 !important;
+            }
+            .header-links-cell span {
+                display: inline-block;
+            }
+
+            .header-links-cell a {
+                color: #666;
+                text-decoration: none;
+            }
+
+            /* footer styles */
+
+            #footer-container {
+                width: 600px;
+                min-width: 600px;
+                margin-top: 10px !important;
+            }
+
+            .footer-cell {
+                width:300px;
+                min-width: 300px;
+                font-size: 12px !important;
+                color: #666;
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .footer-cell a {
+                color: #0277BD;
+            }
+
+            /* general shared module rules */
+            .imdb-module {
+                width: 600px;
+                min-width: 600px;
+            }
+            .imdb-module-cell {
+                width: 600px;
+                min-width: 600px;
+                background-color: #fff;
+                text-align: center;
+            }
+
+            .imdb-module-content {
+                display: inline-block;
+                min-width:540px;
+                width:540px;
+                margin-top:0px;
+            }
+
+            .imdb-module-content td,
+            .imdb-module-content h1,
+            .imdb-module-content a {
+                position: relative;
+            }
+
+            .with-box-shadow {
+                -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+            }
+
+            .td-dark {
+                background-color: #181818;
+                color: #fff;
+                vertical-align: middle;
+            }
+            .td-dark a {
+                color: #fff;
+            }
+
+            .common-button {
+                border-radius: 4px;
+                white-space: nowrap;
+                text-align: center;
+                padding: 0 20px 0 20px !important;
+                line-height: 16px;
+            }
+            .new {
+                width: 80px;
+                height: 40px;
+                margin: auto;
+                text-align: center;
+                vertical-align: middle;
+                background: #b9121b;
+                position: relative;
+                display: block;
+                z-index: 2;
+                -webkit-backface-visibility: hidden;
+                margin-top: 10px;
+                margin-bottom: 40px;
+            }
+
+            .new2 {
+                width: 40px;
+                height: 40px;
+                margin: auto;
+                text-align: center;
+                vertical-align: middle;
+                background: #b9121b;
+                position: relative;
+                display: block;
+                z-index: 2;
+                -webkit-backface-visibility: hidden;
+            }            
+
+            .new:after{
+                content: "";
+                position: absolute;
+                display: block;
+                border: 40px solid #12b952;
+                z-index: 1;
+                left: 0;
+                bottom: -20px;
+                border-top-width: 10px;
+                border-bottom-width: 10px;
+                border-radius: 5px 5px 0px 0px;
+                border-top-color: rgba(255, 0, 0, 0);
+                padding: 0px;
+                /*background: #E6B91E;*/
+                /*-webkit-backface-visibility:hidden;
+                backface-visibility:hidden;
+                -webkit-background-clip:content-box;
+                background-clip:content-box;*/
+                transform: rotate(180deg);
+                outline: 1px solid transparent;
+                }
+
+        </style>
+ </head>
+ <body style="-webkit-text-size-adjust: none; -ms-text-size-adjust: none; height: 100% !important; margin: 0px; padding: 0px; width: 100% !important; background-color: rgb(244, 244, 244); color: rgb(0, 0, 0);-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;"><img width="1" height="1" src="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R19DXB2Z5WJWHS&TO&Uhttps%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&HPAO0AV7WJSDXA0O4FXOQSMFTYLMA&ref_pe_3369030_517046920_opens" />
+    <div class="new">
+        <div class="new-inner">aaa</div>
+    </div>
+  <div class="top-wrapper" align="center" style="background: rgb(244, 244, 244); padding: 20px 0px 0px 0px">
+   <div class="display-none" style="font-size: 1px; color: rgb(244, 244, 244); line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden">
+    What to Watch for Cosplay Inspiration
+   </div>
+   <!-- top-level global container -->
+   <table id="container" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 620px; height: 100%; padding: 10px 10px 10px 10px">
+    <tbody>
+     <tr>
+      <td id="container-cell" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+       <!--  header component -->
+       <table id="header-container" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+        <tbody>
+         <tr>
+          <td id="header-logo-cell" width="100" height="64" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;background-color: rgb(230, 185, 30); height: 64px; min-width: 100px; text-align: center; vertical-align: middle; width: 100px"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2WK97SEGQX7ZL&TC&Uhttps%3A%2F%2Fwww.imdb.com%3Fref_%3Dpe_3369030_517046920_eml_logo&H9MYUFSDMSTB4SEJ7BTQ11WOVGV0A&ref_pe_3369030_517046920_eml_logo" style"text-decoration: none"><img src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/v2/imdb-logo-yellow-100x63._V281134559_.png" height="63" width="100" alt="IMDb Logo" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> </td>
+          <td id="header-spacer-cell" width="8" height="64" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;height: 64px; min-width: 8px; width: 8px"></td>
+          <td id="header-right-cell" class="header-right-cell font-normal td-dark" width="90%" height="64" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;; font-size: 1em;height: 64px; padding: 0 10px 0 20px !important; width: 90%; color: rgb(255, 255, 255); background-color: rgb(24, 24, 24);background-color: rgb(24, 24, 24); color: rgb(255, 255, 255); vertical-align: middle"> <span id="header-text-cell" style="font-size:16px;">TRENDING THIS WEEK</span> </td>
+          <td id="header-links-cell" class="header-links-cell align-right td-dark" height="64" width="150" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: right;min-width: 150px; width: 150px; background-color: rgb(24, 24, 24); padding: 0 30px 0 0 !important;background-color: rgb(24, 24, 24); color: rgb(255, 255, 255); vertical-align: middle"> <span style="display: inline-block"> <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1Q3GJOWL7S3ZW&TC&Uhttps%3A%2F%2Fwww.facebook.com%2Fimdb&HXROBZYPSO0CS4ZCMC6T0NZJ1SESA" style="text-decoration: none;color: rgb(102, 102, 102); text-decoration: none;color: rgb(255, 255, 255)"><img height="24" width="24" src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/v2/facebook-logo-white-transp-24-2x._V282717725_.png" alt="IMDb on Facebook" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a>&nbsp;&nbsp;&nbsp; <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1X7PQPKN69ZC3&TC&Uhttps%3A%2F%2Ftwitter.com%2Fimdb&HWPOH7CH5J1UWFSUVPJKALASWXRGA" style="text-decoration: none;color: rgb(102, 102, 102); text-decoration: none;color: rgb(255, 255, 255)"><img height="24" width="24" src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/v2/twitter-logo-white-transp-24-2x._V282717725_.png" alt="IMDb on Twitter" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a>&nbsp;&nbsp;&nbsp; <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1I8Y0ETQX764K&TC&Uhttps%3A%2F%2Fwww.instagram.com%2Fimdb%2F&HBNROYUX1ZKOUWEPCAZGXPOVJ5AGA" style="text-decoration: none;color: rgb(102, 102, 102); text-decoration: none;color: rgb(255, 255, 255)"><img height="24" width="24" src="https://m.media-amazon.com/images/G/01/IMDb/notifications/Email/Welcome_Series/insta-logo-white-transp._CB1519937580_.png" alt="IMDb on Instagram" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> </span> </td>
+         </tr>
+         <tr>
+          <td height="8" colspan="4" style="font-size:1px; line-height: 1px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">&nbsp;</td>
+         </tr>
+        </tbody>
+       </table>
+       <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+        <tbody>
+         <tr>
+          <td id="content-wrapper" align="center" bgcolor="#ffffff" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;background-color: rgb(255, 255, 255); padding: 0 0 10px 0">
+           <!-- end header component -->
+           <!-- Intro Hero non-dynamic -->
+           <!-- editorial hero component -->
+           <table class="imdb-module video-slate-hero" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center">
+               <table class="imdb-module-static-content" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                <tbody>
+                 <tr>
+                  <td class="align-left" style="background-color:#fff; padding-bottom: 30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1ZQ7PPCOSJZM7&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fvideo%2Fvi3127950873%3Fref_%3Dpe_3369030_517046920_eml_eh_hero_eml_stat_hero&H8XHZFEWLXA3KG2XA9RY8TNTD5WCA&ref_pe_3369030_517046920_eml_eh_hero_eml_stat_hero" style="text-decoration: none"><img width="600" src="https://m.media-amazon.com/images/G/01/IMDb/notifications/Email/features/WTW_Cosplay_16x9_UPDATED_RawImages.jpg" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> </td>
+                 </tr>
+                 <tr>
+                  <td class="imdb-module-static-content-element" style"padding: 0; padding-left: 35px; padding-right: 10px; text-align: left;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt" height="56" width="540"> <h2 style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 22px;margin: 0px; font-weight: normal"><a style="color:#000000;text-decoration: none" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2W4FT2DP4TLX3&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fvideo%2Fvi3127950873%3Fref_%3Dpe_3369030_517046920_eml_stat_hero&HT3JVCSDQHSAPGQZ3GYOE19EI0ESA&ref_pe_3369030_517046920_eml_stat_hero">What to Watch for Cosplay Inspiration</a></h2><br /> </td>
+                 </tr>
+                 <tr>
+                  <td class="imdb-module-static-content-element" style"color: #606060; font-size: 18px; padding-left: 35px; padding-right: 10px; width: 540px; text-align: left;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt" width="540"> We've got the perfect recommendations for what you should stream to inspire your costume for Comic-Con@Home 2020. </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt"> </td>
+             </tr>
+             <tr>
+              <td class="imdb-module-cell" style="padding-top: 20px; align: center;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center" align="center" height="20" colspan="2"> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- editorial hero component -->
+           <table class="imdb-module video-slate-hero" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center">
+               <table class="imdb-module-static-content" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                <tbody>
+                 <tr>
+                  <td class="align-left" style="background-color:#fff; padding-bottom: 10px; padding-top: 20px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left"> <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R26YG5OI381MN5&TC&Uhttps%3A%2F%2Fimdb.to%2FIMDbCosplay%3Fref_%3Deml_mbnr&HI2BVDYDZV5QJPUUBXJRVAIWRMRYA" style="text-decoration: none"><img width="600" src="https://m.media-amazon.com/images/G/01/IMDb/notifications/Email/features/IMDbCosplay1200x250_FINAL.jpg" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt"> </td>
+             </tr>
+             <tr>
+              <td class="imdb-module-cell" height="20" colspan="2" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- full-width section headline -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+             <tr>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+               <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                <tbody>
+                 <tr>
+                  <td class="align-left" height="48" width="600" style="padding:0px 0px 0px 30px; background-color: black; color: white;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left"> <h1 style="padding:0; margin:0;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 24px;margin: 0px; font-weight: normal">Trending Topics</h1> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+             </tr>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end full-width section headline -->
+           <!-- detailed 2-column poster grid -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="padding:0 0 20px 0;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center">
+               <table class="imdb-module-content" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;display: inline-block; min-width: 540px; width: 540px; margin-top: 0px">
+                <tbody>
+                 <tr>
+                  <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative">
+                   <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                    <tbody>
+                     <tr>
+                      <td class="align-left" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left;position: relative"> <a style="padding-bottom: 10px;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2ENWGUQ2RKFJK&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fcomic-con%2Fcosplay-who-wore-it-best%2Frg2173934336%2F%3Fref_%3Dpe_3369030_517046920_eml_nws1p&HAQT4JXOJ0G7KLITPNIASKAE086KA&ref_pe_3369030_517046920_eml_nws1p"><img width="255" height="394" src="https://m.media-amazon.com/images/M/MV5BMjI2MmM0MDktMWU2NS00ZTQ4LTllNjItZGQ4MmUyZWY5MWExXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SY1000_CR0,0,666,1000_AL_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <h2 style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 22px;margin: 0px; font-weight: normal"><a style="color:#000000; text-decoration: none; padding-bottom: 10px;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2OL8FK6OFFWV6&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fcomic-con%2Fcosplay-who-wore-it-best%2Frg2173934336%2F%3Fref_%3Dpe_3369030_517046920_eml_nws1&HHMJYF5GHTQFKZMCB4XK16HVU0DUA&ref_pe_3369030_517046920_eml_nws1">Who Wore It Best? Comic-Con Cosplay Edition</a></h2> <br /> <a style="color: #0277BD;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1KKPWYIPTCX5P&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fcomic-con%2Fcosplay-who-wore-it-best%2Frg2173934336%2F%3Fref_%3Dpe_3369030_517046920_eml_nws1&HUSJNARX9O6NHITYBIXO5X05NLR4A&ref_pe_3369030_517046920_eml_nws1">See more</a> <br /> </td>
+                      <td class="align-left" style="vertical-align:top; font-size:18px; padding-left: 20px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left;position: relative"> <a style="padding-bottom: 10px;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R3CPNIQ1PSI0VU&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fimdbpicks%2Fchild-stars%2Frg1788844800%2F%3Fref_%3Dpe_3369030_517046920_eml_nws2p&HNPOP2LRA6ZVCYOCZ1NPEVUSFRQAA&ref_pe_3369030_517046920_eml_nws2p"><img width="255" height="394" src="https://m.media-amazon.com/images/M/MV5BMjIxMDgwODc0Ml5BMl5BanBnXkFtZTgwODM2NDc1MjE@._V1_SY1000_CR0,0,665,1000_AL_.jpg" class"with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <h2 style"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 22px;margin: 0px; font-weight: normal"><a style="color:#000000; text-decoration: none; padding-bottom: 10px;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RGCZ0X5SPPGO0&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fimdbpicks%2Fchild-stars%2Frg1788844800%2F%3Fref_%3Dpe_3369030_517046920_eml_nws2&HBN3R3S7EGA5LGJ4STT0HX9EPQJ8A&ref_pe_3369030_517046920_eml_nws2">Child Stars, Then and Now</a></h2> <br /> <a style="color: #0277BD;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1UBZUKMD9R61F&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fimdbpicks%2Fchild-stars%2Frg1788844800%2F%3Fref_%3Dpe_3369030_517046920_eml_nws2&HNFQAYI4CEC96C81IVTUBEIWXJB4A&ref_pe_3369030_517046920_eml_nws2">See more</a> <br /><br /> </td>
+                     </tr>
+                    </tbody>
+                   </table> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt"> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end poster grid -->
+           <!-- full-width section headline -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+             <tr>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+               <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                <tbody>
+                 <tr>
+                  <td class="align-left" height="48" width="600" style="padding:0px 0px 0px 30px; background-color: black; color: white;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left"> <h1 style="padding:0; margin:0;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 24px;margin: 0px; font-weight: normal">Top Trailers</h1> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+             </tr>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end full-width section headline -->
+           <!-- poster grid -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center">
+               <table class="imdb-module-content" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;display: inline-block; min-width: 540px; width: 540px; margin-top: 0px">
+                <tbody>
+                 <tr>
+                  <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative">
+                   <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                    <tbody>
+                     <tr>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R3ZNG63YEWK6G&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8420184%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttp_2&HUTR8MBRZACBVJVXRQSVQK2AATAYA&ref_pe_3369030_517046920_eml_tt_ttp_2" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BY2U1ZTU4OWItNGU2MC00MTg1LTk4NzUtYTk3ODhjYjI0MzlmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_SX510_.jpg" class="with-box-shadow" style"border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R6TGT90NPOGXX&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8420184%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttl_2&HO3PBWJKIJDA2MB5VAEDNJQLEGL0A&ref_pe_3369030_517046920_eml_tt_ttl_2">The Last Dance</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2XDC40UMPWOG4&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8850222%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttp_3&HVJ6TTULYISERYWMFRZIALZN4GBQA&ref_pe_3369030_517046920_eml_tt_ttp_3" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BZDUyZWU4NDAtZDlmZC00NjhkLTliZTUtZjVhOTMwNTEyOWFmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX510_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R26FEQVDOTAJA4&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8850222%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttl_3&HYFJCK6LZZ9EJAVNDRFGATQ6BPOWA&ref_pe_3369030_517046920_eml_tt_ttl_3">Peninsula</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R3EZ7P48U88Y3C&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt7550000%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttp_4&HLVQ3QALAUBCMTV3YSPCPPANM9LMA&ref_pe_3369030_517046920_eml_tt_ttp_4" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BYzBhOWU4ODAtZDYzYi00NDU1LWIzZWUtNDZmMDgxODljZTVmXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_SX510_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RA26W0EMXMI22&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt7550000%2F%3Fref_%3Dpe_3369030_517046920_eml_tt_ttl_4&HOGIRZ55TLUXWHQARJJFHGZRJYFIA&ref_pe_3369030_517046920_eml_tt_ttl_4">Project Power</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                     </tr>
+                    </tbody>
+                   </table> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt"> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end poster grid -->
+           <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+            <tbody>
+             <tr>
+              <td align="center" valign="middle" height="30" class"common-button" bgcolor="#0277BD" style="border:none;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;border-radius: 4px; white-space: nowrap; text-align: center; padding: 0 20px 0 20px !important; line-height: 16px"> <a style="text-decoration: none; display: block; width:100%; color:#ffffff; font-size:17px;text-decoration: none" href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RUL4JKVRVMGAH&TC&Uhttps%3A%2F%2Fimdb.com%2Ftrailers%3Fref_%3Dpe_3369030_517046920_all_trailers%3Fref_%3Deml&HVV7E5NQDCHKMMSW26FQZA4X4TUGA&ref_pe_3369030_517046920_all_trailers">Browse All Trailers</a> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- full-width section headline -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+             <tr>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+               <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                <tbody>
+                 <tr>
+                  <td class="align-left" height="48" width="600" style="padding:0px 0px 0px 30px; background-color: black; color: white;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: left"> <h1 style="padding:0; margin:0;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-size: 24px;margin: 0px; font-weight: normal">Most Popular TV Shows This Week</h1> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+             </tr>
+             <tr>
+              <td class="imdb-module-cell" height="20" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center"></td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end full-width section headline -->
+           <!-- poster grid -->
+           <table class="imdb-module" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px">
+            <tbody>
+             <tr>
+              <td class="imdb-module-cell" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; background-color: rgb(255, 255, 255); text-align: center">
+               <table class="imdb-module-content" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;display: inline-block; min-width: 540px; width: 540px; margin-top: 0px">
+                <tbody>
+                 <tr>
+                  <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative">
+                   <table cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+                    <tbody>
+                     <tr>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1HFM8UKRGYBK7&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt5753856%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttp_0&HRWIBJAIOWS9MPLAARC4IQT3MZZWA&ref_pe_3369030_517046920_eml_tvrate_ttp_0" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BZmY2YzU4NDktODIxYi00YWIyLWIzYTctODBkYzYzZjc0ODdlXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_SX510_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1PRJSQXJLF13F&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt5753856%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttl_0&HLPGNZDE7G0C2DAT7A58DT9W4IFQA&ref_pe_3369030_517046920_eml_tvrate_ttl_0">Dark</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R5BO5BQCW4MZM&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8210856%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttp_1&HKFGWADDIVNERMEZHVQ50DMZMN8QA&ref_pe_3369030_517046920_eml_tvrate_ttp_1" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BYjA2M2YxMjQtOTIwOS00ODIyLThmYWEtM2Y1NGFkNjI1YmNkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_SX510_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RMEJYHBEHJOSD&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt8210856%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttl_1&H4ZGNPA43WSTZGVOFR5HXWDRJ6XGA&ref_pe_3369030_517046920_eml_tvrate_ttl_1">Cursed</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                      <td width="160" class="align-center" style="vertical-align:top; font-size:18px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;position: relative"> <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2TLTHEKM6RGFZ&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt9059350%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttp_2&HGIALTO9EQTFVMCN0NPMN31HDMMMA&ref_pe_3369030_517046920_eml_tvrate_ttp_2" style="text-decoration: none;position: relative"><img width="160" height="238" src="https://m.media-amazon.com/images/M/MV5BMDg4NTQ2ZDgtMzI5Zi00Mzc1LTk0ZWQtZTI5ODhkNWY5NzdlXkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_SX510_.jpg" class="with-box-shadow" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;-webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); -moz-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75); box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.75)" /></a> <br /><br /> <a style="color:#181818;text-decoration: none;position: relative" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1HFPBGPWR0M9R&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt9059350%2F%3Fref_%3Dpe_3369030_517046920_eml_tvrate_ttl_2&HAVE0XAPTZKIMYKAIHT881W5O51SA&ref_pe_3369030_517046920_eml_tvrate_ttl_2">Warrior Nun</a><br /><br /> </td>
+                      <td width="30" style="min-width:30px;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;position: relative"></td>
+                     </tr>
+                    </tbody>
+                   </table> </td>
+                 </tr>
+                </tbody>
+               </table> </td>
+              <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt"> </td>
+             </tr>
+            </tbody>
+           </table>
+           <!-- end poster grid -->
+           <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+            <tbody>
+             <tr>
+              <td align="center" valign="middle" height="30" class"common-button" bgcolor="#0277BD" style="border:none;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;border-radius: 4px; white-space: nowrap; text-align: center; padding: 0 20px 0 20px !important; line-height: 16px"> <a style="text-decoration: none; display: block; width:100%; color:#ffffff; font-size:17px;text-decoration: none" href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R1B48913UY4JFB&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fchart%2Ftvmeter%3Fref_%3Dpe_3369030_517046920_eml&HEZBGBB1YQITXTJGLAB7WAWLFDOQA&ref_pe_3369030_517046920_eml">Browse Popular TV Shows</a> </td>
+             </tr>
+            </tbody>
+           </table> <br /> </td>
+         </tr>
+         <tr>
+          <td style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt">
+           <!-- End newsletter content --> </td>
+         </tr>
+        </tbody>
+       </table>
+       <!-- end content wrapper -->
+       <!-- global footer component -->
+       <div id="footer-wrapper" align="center">
+        <table id="footer-container" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;border-spacing: 0;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 600px; min-width: 600px; margin-top: 10px !important">
+         <tbody>
+          <tr>
+           <td id="footer-social-cell" class="footer-cell align-center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;text-align: center;width: 300px; min-width: 300px; font-size: 12px !important; color: rgb(102, 102, 102); text-align: center; padding: 20px 0"> <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RAWGD4NWNGDK7&TC&Uhttps%3A%2F%2Fwww.facebook.com%2Fimdb&HJFL2Z1R0CCF3NMGU9SRSASDSAYSA" style="text-decoration: none;color: rgb(2, 119, 189)"><img width="24" height="24" src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/v2/facebook-logo-grey-transp-24-2x._V282716639_.png" alt="IMDb on Facebook" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a>&nbsp;&nbsp;&nbsp; <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R2IF361S39YLRP&TC&Uhttps%3A%2F%2Ftwitter.com%2Fimdb&HIESJMCQQBD43WZPNRFTTLS45AMSA" style="text-decoration: none;color: rgb(2, 119, 189)"><img width="24" height="24" src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/v2/twitter-logo-grey-transp-24-2x._V282716636_.png" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a>&nbsp;&nbsp;&nbsp; <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R312YX78K43WWI&TC&Uhttps%3A%2F%2Fwww.instagram.com%2Fimdb%2F&H2NE0R2W3HIDQX3QCIU86PUEVI48A" style="text-decoration: none;color: rgb(2, 119, 189)"><img width="24" height="24" src="https://m.media-amazon.com/images/G/01/IMDb/notifications/Email/Welcome_Series/insta-logo-grey-transp._CB1519937581_.png" alt="IMDb on Instagram" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> <br /><br /> <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RH5KFDWWNA54B&TC&Uhttps%3A%2F%2Ftqp-4.tlnk.io%2Fserve%3Faction%3Dclick%26publisher_id%3D351600%26site_id%3D133428%26my_campaign%3DEmail%2520Footer%2520iOS&HMMARCBKOVQWWNAWPC0I3PMPUZ2AA" style="text-decoration: none;color: rgb(2, 119, 189)"><img src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/apple-appstore-badge-640._V285051558_SX113_.png" alt="Get the IMDb App for iOS" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> <a href="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&R23149IC3WDNL9&TC&Uhttps%3A%2F%2Fjvt-y.tlnk.io%2Fserve%3Faction%3Dclick%26publisher_id%3D351600%26site_id%3D133429%26my_campaign%3DIMDb%2520Email%2520Footer%2520-%2520Android&HK4MH53EEEHWZOJQ3DXX5RQORHYEA" style="text-decoration: none;color: rgb(2, 119, 189)"><img src="https://images-na.ssl-images-amazon.com/images/G/01/IMDb/notifications/beta/google-play-badge-640._V285051558_SX113_.png" alt="Get the IMDb App for Android" style="border: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic" /></a> <br /><br /> <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box">Want to change how you receive these emails?<br />You can <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RX4V41P4T9S7E&TC&Uhttps%3A%2F%2Fwww.imdb.com%2Fpreferences%2Femail%2F%3Fref_%3Dpe_3369030_517046920_eml_prefs&HCHTRD6V2HY8NVN3FYIK74FZZPMEA&ref_pe_3369030_517046920_eml_prefs" style="text-decoration: none;color: rgb(2, 119, 189)">update your preferences</a> or <a href="https://www.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&RSJ9KZNNTZG10&TX&Uhttps%3A%2F%2Fwww.imdb.com%2Fsubscriptions%2Fo%2F1BixA6vX3YlqWKoJx48bZJTwQRmBHYoX11HExI5C1nEDDYFA87ucRFOnfXEmQYqO5%3Fref_%3Deml_unsub&HYS56CYUWUAKG5CA6QLBSWDMQVU4A" style="text-decoration: none;color: rgb(2, 119, 189)">click here to unsubscribe</a>.</p> </td>
+          </tr>
+          <tr>
+           <td id="footer-address-cell" class="footer-cell" style="border-top: 1px solid #181818;-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box;font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, &quot;sans-serif&quot;;border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;width: 300px; min-width: 300px; font-size: 12px !important; color: rgb(102, 102, 102); text-align: center; padding: 20px 0"> <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box">Copyright &copy; 2020 IMDb.com, All Rights Reserved.<br />410 Terry Avenue North, Seattle, WA 98109-5210</p> </td>
+          </tr>
+         </tbody>
+        </table>
+       </div> </td>
+     </tr>
+    </tbody>
+   </table>
+  </div>
+  <!-- top-wrapper div -->  
+ <img width="1" height="1" src="https://r.imdb.com/gp/r.html?C2JS1CPTJKQ37A&K2XEBXEKINX46X&Murn:rtn:msg:202007240455482967e5b92a994b49b68c4dd9c920p0na&REMD9GLJKZUFM&TE&Uhttps%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FG%2F01%2Fnav%2Ftransp.gif&HC6UVLSRPAWFRUDW2G5FG5WARG6OA&ref_pe_3369030_517046920_open" /></body>
+</html>
